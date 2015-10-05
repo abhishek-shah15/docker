@@ -12,7 +12,7 @@ MAINTAINER Example Abhishek
 # Update the repository sources list
 RUN apt-get update
 
-################## BEGIN INSTALLATION ######################
+################## BEGIN INSTALLATION ############################
 
 # Install apache2 server package
 RUN apt-get install -y apache2
@@ -27,4 +27,12 @@ RUN apt-get install -y mysql-server
 RUN apt-get install -y phpmyadmin
 
 
-##################### INSTALLATION END #####################
+##################### INSTALLATION END ##########################
+
+############## Setup Start ######################################
+
+mysqladmin -u root password password
+
+
+############ Setup End #############################################
+
