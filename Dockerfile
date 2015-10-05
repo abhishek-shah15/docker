@@ -31,7 +31,8 @@ RUN apt-get install -y phpmyadmin
 
 ############## Setup Start #################################
 
-mysqladmin -u root password password
+## Set Root password for Mysql
+RUN mysqladmin -u root password password
 
 
 ############ Setup End #####################################
