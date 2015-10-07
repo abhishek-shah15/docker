@@ -1,5 +1,5 @@
 # docker
 
-*lamp Stack* docker
+**Lamp Stack** docker
 
 This will install Apache2 , Mysql , Php and phpmyadmin in your docker container
