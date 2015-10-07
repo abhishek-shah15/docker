@@ -11,6 +11,16 @@ step1()
 }
 
 
+step2()
+{
+	echo -n "Username:"
+	read username
+	mkdir /home/$username
+	useradd -d /home/$username $username
+	passwd $username
+
+}
+
 #################### Starting of Script ##########################################
 clear
 echo "========================================================="
@@ -27,7 +37,7 @@ echo ""
 
 
 ### Step 1 : Execution
-echo "------------- Step 1 ------------------"
+echo "------------- Step 1: Set Mysql Password --------------"
 while true; do
     read -p "Do you want to Set Mysql Password? [y/n]:" ans1
     echo ""
@@ -37,20 +47,16 @@ while true; do
         * ) echo "Please answer y or n.";;
     esac
 done
-echo "------------- End Step 1 ------------------"
+echo "------------- End Step 1 ------------------------------"
 
 echo ""
 
 ### Step 2 : Execution
-echo "------------- Step 2 ------------------"
+echo "------------- Step 2: Add New System Login User -------"
 echo ""
-echo "Add New User for Login"
-echo -n "Username:"
-read username
-mkdir /home/$username
-useradd -d /home/$username $username
-passwd $username
-
+step2
+echo ""
+echo "------------- End Step 2 ------------------------------"
 
 
 rm -rf /entrypoint.sh
