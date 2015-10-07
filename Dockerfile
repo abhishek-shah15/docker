@@ -26,6 +26,8 @@ RUN apt-get install -y mysql-server
 # Install phpmyadmin package
 RUN apt-get install -y phpmyadmin
 
+# Install vim package
+RUN apt-get install -y vim
 
 ##################### INSTALLATION END #####################
 
