@@ -31,12 +31,25 @@ RUN apt-get install -y phpmyadmin
 
 ############## Setup Start #################################
 
+
+COPY docker-entrypoint.sh /entrypoint.sh
+
+RUN chmod 777 /entrypoint.sh 
+
+# grr, ENTRYPOINT resets CMD now
+ENTRYPOINT ["/entrypoint.sh"]
+
+CMD ["/bin/bash"]
+
 ### Start Mysql Service
-RUN service mysql start
+#RUN service mysql start
+#RUN /etc/init.d/mysql start 
+
+### Start apache2 Service
+#RUN service apache2 start 
 
 ## Set Root password for Mysql
 #RUN mysqladmin -u root password password
 
 
 ############ Setup End #####################################
-
