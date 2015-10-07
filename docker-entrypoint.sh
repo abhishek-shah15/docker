@@ -43,4 +43,15 @@ echo ""
 
 ### Step 2 : Execution
 echo "------------- Step 2 ------------------"
+echo ""
+echo "Add New User for Login"
+echo -n "Username:"
+read username
+mkdir /home/$username
+useradd -d /home/$username $username
+passwd $username
+
+
+
+rm -rf /entrypoint.sh
 exec "$@"
